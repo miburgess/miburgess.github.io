@@ -1,6 +1,209 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            border-bottom: 1px solid #ffffff;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            text-align: center;
+        }
+        
+        h1, h2 {
+            color: #ffffff;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+        }
+        
+        .entry {
+            margin-bottom: 1rem;
+        }
+        
+        .title {
+            font-weight: bold;
+        }
+        
+        .date {
+            color: #cccccc;
+        }
+        
+        .contact {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .skills-section {
+            text-align: center;
+        }
+        
+        .skills-grid {
+            display: inline-grid;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 0 auto;
+            justify-content: center;
+        }
+        
+        .skill-category {
+            margin-bottom: 1rem;
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #242424;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MILES BURGESS</h1>
+            <div class="contact">
+                <span>yburgemc@my.gvltec.edu</span>
+                <span>|</span>
+                <span>(864) 274-5071</span>
+                <span>|</span>
+                <span>Upstate, SC</span>
+                <span>Employment Status: Free Agent</span>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>EXPERIENCE</h2>
+            <div class="entry">
+                <div class="title">Bioscience Student Learner</div>
+                <div class="date">2016 - 2020</div>
+                <ul>
+                    <li>Operational microscopy(optical, flourescent) and protocols such as gfp</li>
+                    <li>Various protocols such as cell culturing, determinative bacteriology, transduction, domain familiarities ranging from cell bio to ecology </li>
+                    <li>Peer to Peer interpersonal communications.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="title">Mechatronics</div>
+                <div class="date">2024 - Present</div>
+                <ul>
+                    <li>Foundation in reading technical schematics.</li>
+                    <li>Foundation in analog AC/DC circuit analysis.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>EDUCATION</h2>
+            <ul>
+                <div class="entry">
+                    <li>
+                        <div class="title">Bachelor of Science in Biology</div>
+                        <ul style="list-style-type: none;">
+                            <li>
+                                <p>Winthrop University</p>
+                                <div class="date">2016 - 2020</div>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="entry">
+                    <li>
+                        <div class="title">Associate of Applied Science in Mechatronics</div>
+                        <ul style="list-style-type: none;">
+                            <li>
+                                <p>Greenville Technical College</p>
+                                <div class="date">2024 - Present</div>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+            </ul>
+        </div>
+
+        <div class="section skills-section">
+            <h2>SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="title">Programming</div>
+                    <p>• Python Programming<br>• R Studio<br>• Rudimentary Web Design</p>
+                </div>
+                <div class="skill-category">
+                    <div class="title">Technical</div>
+                    <p>• AC/DC Circuit Analysis<br>• Biotechnical Analysis</p>
+                </div>
+                <div class="skill-category">
+                    <div class="title">Design</div>
+                    <p>• Non-Technical 3D Modeling</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--       <!DOCTYPE html>
+<html>
+<head>
 <p>test</p>
 </head>
 <body>
@@ -10,4 +213,4 @@
 
 
 
-</html>
+</html> -->
