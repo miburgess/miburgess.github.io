@@ -82,11 +82,46 @@
                 padding: 10px;
             }
         }
+
+        /* Styles for Navigation Tabs */
+.nav-tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centers the tabs horizontally */
+    background-color: #333;  /* Choose a background color */
+}
+
+.nav-tabs li {
+    margin: 0 10px;
+}
+
+.nav-tabs a {
+    display: block;
+    padding: 10px 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-tabs a:hover {
+    background-color: #555;  /* Change background on hover to indicate interactivity */
+}
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+
+            <!-- Navigation Tabs -->
+    <nav>
+        <ul class="nav-tabs">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#tools">Tools</a></li>
+        </ul>
+    </nav>
+
             <h1>MILES BURGESS</h1>
             <div class="contact">
                 <span>yburgemc@my.gvltec.edu</span>
