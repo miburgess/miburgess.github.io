@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600&display=swap');
+
+/* ─── CSS Variables ─────────────────────────────── */
+:root {
+  --aqua:       #00d4ff;
+  --aqua-dark:  #0099cc;
+  --aqua-glow:  rgba(0, 212, 255, 0.45);
+  --teal:       #00f5c8;
+  --sky:        #87ceeb;
+  --white-glass: rgba(255,255,255,0.12);
+  --white-glass-strong: rgba(255,255,255,0.22);
+  --border-glass: rgba(255,255,255,0.35);
+  --text-bright: #e8f8ff;
+  --text-dim:    rgba(200,235,255,0.7);
+  --shadow-blue: rgba(0, 140, 200, 0.5);
+}
+
+/* ─── Reset & Base ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  color: var(--text-bright);
+  min-height: 100vh;
+  background-image: url('bg.png');
+  background-repeat: repeat;
+  background-size: 480px auto;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Dark overlay so content stays readable */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(0,10,30,0.55) 0%,
+    rgba(0,30,60,0.45) 50%,
+    rgba(0,5,20,0.6) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Decorative floating orbs ─────────────────── */
+body::after {
+  content: '';
+  position: fixed;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,200,255,0.08) 0%, transparent 70%);
+  top: -150px; right: -150px;
+  pointer-events: none;
+  z-index: 0;
+  animation: orb-drift 12s ease-in-out infinite alternate;
+}
+
+@keyframes orb-drift {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(-40px, 60px) scale(1.1); }
+}
+
+/* ─── Layout ────────────────────────────────────── */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Nav Bar ───────────────────────────────────── */
+nav {
+  margin-bottom: 0;
+}
+
+.nav-tabs {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(0,80,140,0.6), rgba(0,160,220,0.35));
+  border: 1px solid var(--border-glass);
+  border-radius: 40px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 0 18px rgba(0,180,255,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    inset 0 -1px 0 rgba(0,0,0,0.2);
+  position: relative;
+  overflow: visible;
+  margin-bottom: 20px;
+}
+
+/* gloss shine on nav */
+.nav-tabs::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; width: 80%; height: 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.18), transparent);
+  border-radius: 40px 40px 0 0;
+  pointer-events: none;
+}
+
+.nav-tabs li { margin: 0; }
+
+.nav-tabs a {
+  display: block;
+  padding: 8px 22px;
+  color: var(--text-bright);
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 30px;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+
+.nav-tabs a:hover {
+  background: linear-gradient(135deg, rgba(0,200,255,0.35), rgba(0,120,200,0.25));
+  box-shadow: 0 0 12px var(--aqua-glow), inset 0 1px 0 rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+/* ─── Header / Hero Card ────────────────────────── */
+header {
+  text-align: center;
+  padding: 36px 28px 28px;
+  margin-bottom: 28px;
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(0,100,180,0.35) 0%,
+    rgba(0,200,255,0.15) 40%,
+    rgba(0,60,120,0.4) 100%
+  );
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 8px 40px rgba(0,140,220,0.35),
+    0 2px 0 rgba(255,255,255,0.12) inset,
+    0 -2px 0 rgba(0,0,0,0.15) inset;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gloss highlight */
+header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 52%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.13), transparent);
+  border-radius: 20px 20px 0 0;
+  pointer-events: none;
+}
+
+/* Lens flare decoration */
+header::after {
+  content: '';
+  position: absolute;
+  width: 180px; height: 180px;
+  top: -50px; right: -40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,220,255,0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 0 20px var(--aqua),
+    0 0 40px rgba(0,200,255,0.4),
+    0 2px 4px rgba(0,0,0,0.6);
+  margin-bottom: 12px;
+  animation: title-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes title-glow {
+  from { text-shadow: 0 0 18px var(--aqua), 0 0 35px rgba(0,200,255,0.35), 0 2px 4px rgba(0,0,0,0.6); }
+  to   { text-shadow: 0 0 28px var(--aqua), 0 0 55px rgba(0,220,255,0.55), 0 2px 4px rgba(0,0,0,0.6); }
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+.contact span { color: var(--aqua-dark); font-weight: 600; }
+
+/* ─── Section Cards ─────────────────────────────── */
+.section {
+  margin-bottom: 24px;
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(0,80,150,0.28) 0%,
+    rgba(0,160,220,0.12) 60%,
+    rgba(0,40,100,0.32) 100%
+  );
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 4px 24px rgba(0,120,200,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 -1px 0 rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.section:hover {
+  box-shadow:
+    0 8px 36px rgba(0,160,255,0.38),
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    inset 0 -1px 0 rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+/* Top gloss per section */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.07), transparent);
+  border-radius: 16px 16px 0 0;
+  pointer-events: none;
+}
+
+/* ─── Section Headings ──────────────────────────── */
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--aqua);
+  text-shadow: 0 0 12px var(--aqua-glow);
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0,200,255,0.3);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 60px; height: 2px;
+  background: linear-gradient(to right, var(--aqua), transparent);
+  border-radius: 2px;
+}
+
+/* ─── Entries ───────────────────────────────────── */
+.entry {
+  margin-bottom: 16px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 0.03em;
+}
+
+.date {
+  font-size: 0.82rem;
+  color: var(--teal);
+  letter-spacing: 0.05em;
+  margin: 3px 0;
+}
+
+.date h5 {
+  display: inline;
+  font-weight: 500;
+  font-size: inherit;
+  color: var(--sky);
+}
+
+ul {
+  margin-top: 8px;
+  padding-left: 22px;
+}
+
+li {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  margin-bottom: 5px;
+  line-height: 1.55;
+}
+
+li::marker {
+  color: var(--aqua);
+}
+
+/* ─── Skills Grid ───────────────────────────────── */
+.skills-section { text-align: center; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.skill-category {
+  padding: 18px 16px;
+  border-radius: 14px;
+  background: linear-gradient(
+    160deg,
+    rgba(0,100,180,0.35) 0%,
+    rgba(0,180,240,0.15) 50%,
+    rgba(0,60,120,0.38) 100%
+  );
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 4px 18px rgba(0,120,200,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.skill-category:hover {
+  box-shadow:
+    0 6px 28px rgba(0,200,255,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.28);
+  transform: translateY(-3px) scale(1.01);
+}
+
+/* Gloss on skill cards */
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 45%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);
+  border-radius: 14px 14px 0 0;
+  pointer-events: none;
+}
+
+.skill-category .title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--aqua);
+  text-shadow: 0 0 8px var(--aqua-glow);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.skill-category p {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  margin: 6px 0;
+}
+
+/* ─── Responsive ────────────────────────────────── */
+@media (max-width: 680px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container { padding: 14px 14px 40px; }
+
+  .section { padding: 18px 16px; }
+
+  nav { margin-bottom: 0; }
+}
+
+@media (min-width: 681px) and (max-width: 860px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ─── Scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: rgba(0,20,50,0.5); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--aqua-dark), #005580);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--aqua); }
+
+/* ─── Selection ─────────────────────────────────── */
+::selection {
+  background: rgba(0,200,255,0.3);
+  color: #fff;
+}
