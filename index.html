@@ -1,236 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: #ffffff;
-            font-family: 'Roboto Mono', monospace;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        header {
-            border-bottom: 1px solid #ffffff;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            text-align: center;
-        }
-        
-        h1, h2 {
-            color: #ffffff;
-        }
-        
-        .section {
-            margin-bottom: 2rem;
-        }
-        
-        .entry {
-            margin-bottom: 1rem;
-        }
-        
-        .title {
-            font-weight: bold;
-        }
-        
-        .date {
-            color: #cccccc;
-        }
-        
-        .contact {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .skills-section {
-            text-align: center;
-        }
-        
-        .skills-grid {
-            display: inline-grid;
-            grid-template-columns: repeat(3, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 0 auto;
-            justify-content: center;
-        }
-        
-        .skill-category {
-            margin-bottom: 1rem;
-            text-align: center;
-            padding: 1rem;
-            border: 1px solid #333;
-            border-radius: 8px;
-            background-color: #242424;
-        }
-        
-        @media (max-width: 768px) {
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
-        }
-        
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-        }
-
-        /* Styles for Navigation Tabs */
-.nav-tabs {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* Centers the tabs horizontally */
-    background-color: #333;  /* Choose a background color */
-}
-
-.nav-tabs li {
-    margin: 0 10px;
-}
-
-.nav-tabs a {
-    display: block;
-    padding: 10px 15px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.nav-tabs a:hover {
-    background-color: #555;  /* Change background on hover to indicate interactivity */
-}
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miles Burgess</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <header>
+  <div class="container">
 
-            <!-- Navigation Tabs -->
-    <nav>
+    <header>
+      <nav>
         <ul class="nav-tabs">
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="#tools">Tools</a></li>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="#tools">Tools</a></li>
         </ul>
-    </nav>
+      </nav>
 
-            <h1>MILES BURGESS</h1>
-            <div class="contact">
-                <span>yburgemc@my.gvltec.edu</span>
-                <span>|</span>
-                <span>Upstate, SC</span>
-                <span>|</span>
-                <span>Employment Status: Free Agent</span>
-            </div>
-        </header>
+      <h1>Miles Burgess</h1>
+      <div class="contact">
+        <span>yburgemc@my.gvltec.edu</span>
+        <span style="color:rgba(255,255,255,0.3)">|</span>
+        <span>Upstate, SC</span>
+        <span style="color:rgba(255,255,255,0.3)">|</span>
+        <span>Free Agent</span>
+      </div>
+    </header>
 
-        <div class="section">
-            <h2>EXPERIENCE</h2>
-            
-            <div class="entry">
-                <div class="title">Mechatronics AAS</div>
-                <div class="date">2024 - Present</div>
-                <div class="date"><h5>GPA:3.84</h5></div>
-                <ul>
-                    <li>Foundation in reading technical/industrial schematics.</li>
-                    <li>Foundation in analog AC/DC circuit analysis.</li>
-                    <li>Foundation in 3d Modeling and design.</li>
-                    <li>PLC programming</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>EDUCATION</h2>
-            <ul>
-                <div class="entry">
-                    <li>
-                        <div class="title">Associate of Applied Science in Mechatronics</div>
-                        <ul style="list-style-type: none;">
-                            <li>
-                                <p>Greenville Technical College</p>
-                                <div class="date">2024 - Present</div>
-                            </li>
-                        </ul>
-                    </li>
-                </div>
-            </ul>
-        </div>
-
-        <div class="section skills-section">
-            <h2>SKILLS</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="title">Programming</div>
-                    <p>• Python Programming<br>• R Studio<br>• Rudimentary Web Design</p>
-                </div>
-                <div class="skill-category">
-                    <div class="title">Technical</div>
-                    <p>• AC/DC Circuit Analysis<br>• Robot operations and pendant programming (ABB)<br>
-                    • PLC programming (Allen Bradly and Siemens*)<br></p>
-                </div>
-                <div class="skill-category">
-                    <div class="title">Design</div>
-                    <p>• Non-Technical 3D Modeling</br>- Blender</p>
-                    <p>• Technical 3D Modeling </br>- SolidWorks, Fusion 360, Onshape, FreeCAD</p>
-                </div>
-            </div>
-        </div>
+    <!-- Experience -->
+    <div class="section">
+      <h2>Experience</h2>
+      <div class="entry">
+        <div class="title">Mechatronics AAS</div>
+        <div class="date">2024 – Present &nbsp;·&nbsp; <h5>GPA: 3.84</h5></div>
+        <ul>
+          <li>Foundation in reading technical/industrial schematics.</li>
+          <li>Foundation in analog AC/DC circuit analysis.</li>
+          <li>Foundation in 3D modeling and design.</li>
+          <li>PLC programming.</li>
+        </ul>
+      </div>
     </div>
+
+    <!-- Education -->
+    <div class="section">
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="title">Associate of Applied Science in Mechatronics</div>
+        <div class="date">Greenville Technical College &nbsp;·&nbsp; 2024 – Present</div>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="section skills-section">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <span class="title">Programming</span>
+          <p>Python Programming</p>
+          <p>R Studio</p>
+          <p>Rudimentary Web Design</p>
+        </div>
+
+        <div class="skill-category">
+          <span class="title">Technical</span>
+          <p>AC/DC Circuit Analysis</p>
+          <p>Robot Ops &amp; Pendant Programming (ABB)</p>
+          <p>PLC Programming<br>(Allen Bradley &amp; Siemens)</p>
+        </div>
+
+        <div class="skill-category">
+          <span class="title">Design</span>
+          <p><strong style="color:#87ceeb;font-size:0.78rem;">Non-Technical 3D</strong><br>Blender</p>
+          <p><strong style="color:#87ceeb;font-size:0.78rem;">Technical 3D</strong><br>SolidWorks · Fusion 360<br>Onshape · FreeCAD</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--       <!DOCTYPE html>
-<html>
-<head>
-<p>test</p>
-</head>
-<body>
-<h1>Test</h1>
-<p>Yes</p>
-</body>
-
-
-
-</html> -->
